@@ -1,0 +1,66 @@
+<?php ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta property="og:image" content="<?= $this->Html->url("/img/logo.png", true) ?>"/>
+	<meta property="og:title" content="HookUp Campus - Make your tuition worthwhile"/>
+	<meta property="og:url" content="http://www.hookupcampus.com/">
+	<meta property="og:site_name" content="HookUp Campus"/>
+
+	<meta name="keywords" content="dating,hookup,hooking up,sex,dating,NYU,New York University,college,university">
+	<meta name="description" content="Find someone in your college to hookup with">
+
+	<?= $this->Html->charset() ?>
+	<link rel="icon"
+		type="image/png"
+		href="<?= $this->Html->url("/img/NYU_HookUps.png", true) ?>">
+
+	<title>
+		NYU HookUps
+	</title>
+	<?= $this->Html->css(array(
+			"bootstrap.min",
+			"standard"
+		))
+	?>
+
+	<?= $this->fetch("meta") ?>
+	<?= $this->fetch("css") ?>
+	<?= $this->fetch("script") ?>
+
+	<?= $this->Html->script(array(
+			"jquery.min",
+			"bootstrap.min",
+			"fb-jssdk",
+			"standard"
+		))
+	?>
+</head>
+<body>
+
+
+
+<?php
+require "bg.php";
+require "navbar.php";
+?>
+
+<div class="container" id="content_container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-1 col-xs-12"
+			id="content_wrapper">
+			<?php echo $this->Session->flash(); ?>
+			<?php echo $this->fetch("content"); ?>
+		</div>
+	</div>
+</div>
+
+
+<?php
+require "footer.php";
+?>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic|Ubuntu:700);
+
+h1, strong, .strong{
+    font-family: Ubuntu;
+}
+
+.section_buffer{
+    border-top: 4px dashed #106534;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.section_buffer_thin{
+    border-top: 4px dashed #106534;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.vertical_buffer{
+    border-right: 4px dashed #106534;
+}
+
+.buffer-top{
+    margin-top: 3em;
+}
+
+.align-center{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.alert h4{
+       margin: 0;
+}
+
+@media (max-width: 768px){
+    /**** mobile ****/
+    #content_wrapper{
+	padding-top: 1em;
+    }
+
+    .buffer-top-xs{
+	margin-top: 2em;
+    }
+
+    .text-center-xs{
+	text-align: center;
+    }
+
+    #share_row{
+	margin-top: 1em;
+    }
+}
+
+@media (min-width: 768px){
+    /**** desktop ****/
+    .flex-sm{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    }
+
+    .flex-sm-center{
+	align-items: center;
+    }
+
+    .middle_border{
+	border-left: 4px dashed #106534;
+	border-right: 4px dashed #106534;
+    }
+}
+
+
+
+.spacers(6);
+
+.spacers(@n, @i: 1) when (@i =< @n) {
+  .spacer-@{i} {
+    height: @i*1em;
+  }
+  .spacers(@n, (@i + 1));
+}

@@ -1,0 +1,37 @@
+<?php
+App::uses("Controller", "Controller");
+
+class AppController extends Controller {
+	public $helpers = array(
+		"Session",
+		"Html" => array(
+			"className" => "BoostCake.BoostCakeHtml"),
+		"Form" => array(
+			"className" => "BoostCake.BoostCakeForm"),
+		"Paginator" => array(
+			"className" => "BoostCake.BoostCakePaginator")
+	);
+
+
+	public $components = array(
+		"LessCompiler.Less",
+		"Session",
+		"Auth" => array(
+			"loginRedirect" => "/login",
+			"authorize" => array("Controller")
+		)
+	);
+
+	public function beforeRender(){
+		// custom flash
+		if ($this->Session->check("Message.flash")) {
+			$flash = $this->Session->read("Message.flash");
+
+			if ($flash["element"] == "default") {
+				$flash["element"] = "alert_primary";
+				$this->Session->write("Message.flash", $flash);
+			}
+		}
+	}
+}
+?>

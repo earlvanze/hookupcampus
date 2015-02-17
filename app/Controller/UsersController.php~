@@ -1,0 +1,9 @@
+<?php
+class UsersController extends AppController{
+	public function login(){
+		$this->loadModel("Campus");
+		$campuses = $this->Campus->find();
+		$this->request->data = $campuses;
+	}
+}
+?>
